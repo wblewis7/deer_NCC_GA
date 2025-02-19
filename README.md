@@ -27,3 +27,8 @@ The number of stands of loblolly pine in which survey locations were located.
 # stand
 An indexing value giving the stand ID (1 - 5) for each NCC survey.
 
+<br />
+<br />
+
+# Deer_NCC_GA.R
+R and JAGS code for assessing the effects of mid-rotation timber thinning, prescribed spring burns, herbicide application, and time since treatment on deer NCC in Georgia. Values of NCC were right-skewed (some values over 10x higher than mean), so we analyze NCC values based on a log-Normal regression in a Bayesian framework. We added a small constant (1) to all values to account for calculated NCC values of 0. We model NCC based on stand-specific intercepts and effects of basal area, fire treatment, herbicide treatment, year (2020 or 2021), and interactions between fire and herbicide, fire and year, and herbicide and year. We incorporated interactions between treatments and year to allow for different vegetation responses between the first and second growing seasons post-treatment. Surveys were conducted at the same locations in 2020 and 2021, though we do not model dependence between NCC estimates from the same survey locations due to data limitations (i.e., needing to estimate effects 252 survey locations with only 501 data points). We run models separatley for NCC values calculated using 6% and 14% crude protein requirements.
